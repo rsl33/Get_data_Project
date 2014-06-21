@@ -99,39 +99,33 @@ colnames(tidy_activity)<-qqavg
 write.csv(tidy_activity, file="tidy_Activity.csv", row.names=F)
 
 ##Done
-
+#======================
 ##Function 'doProject' to extract a set of unique (180 in all) subject and activity (rows; ~350) 
 #from the reduced data set of 53 means and 33 stds,  
 #calculate the column means, forming a single row, and append them to the tidy data file 
 #of 180 observations by 88 data columns (2 cols. ID & 86 cols. of means) being built for output.
 # doProject also recodes the six numeric activities to text labels.
+#=====================
 
 doProject<-function(subj=30, activ=6){
 
-  #accMltrex1<-as.data.frame(x[1:88])
-  #accMltrex<-as.numeric(accMltrex)
-  #accMltrex1<-data.frame()
-  
-  accMltrex2<-data.frame()
+#set up output data frame
+
+   accMltrex2<-data.frame()
+
 for(i in 1:subj){
-  #sb<-i
-  #print(sb)
+ 
   for(j in 1:activ){
-      #av<-j
-      #print(sb)
-      #print(av)
+     
       sel<-which(ltrex$subj==i&ltrex$activ==j)
-      #print(head(sel, n=2))
+      
       avgltrex<-colMeans(ltrex[sel,])
-      #print(head(avgltrex, n=4))
+#return a col; transpose to row      
       tavgltrex<-t(avgltrex)
-      #print(head(tavgltrex, n=1))
+# Add to data fram    
       accMltrex2<-rbind2(accMltrex2, tavgltrex)
              }
-  #print(head(tavgltrex, n=1))
             }
-
-#accMltrex1<<-rbind2(accMltrex1, accMltrex2)
 
 #Write the data frame to the global environment
 tidy_activity<<-accMltrex2
