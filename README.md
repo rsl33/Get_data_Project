@@ -3,18 +3,9 @@ Get_data_Project
 
 Run_analysis, etc.
 
-The goal of this project is to transform a given data set into a tidy data set complete with README file, code book,
-and R processing script, Run_analysis.R.
- 
-Get_data_Project
-================
+The goal of this project is to transform a given data set into a tidy data set complete with README file (this file), code book, and processing script in R. These three files are contained in this repo.
 
-Run_analysis, etc.
-
-The goal of this project is to transform a given data set into a tidy data set complete with README file (this file), code book, and processing 
-script in R. These three files are contained in this repo.
-This file gives an overview of prerequisites to accomplish the task with the R script provided here some orientation about how the given 
-data were transformed into a tidy data set according to the instructions.
+This README file gives an overview of prerequisites to accomplish the task with the R script provided here some orientation about how the given data were transformed into a tidy data set according to the instructions.
 The code book provides some explanation of from where these data came and what they mean.
 
 The script run_analysis.R included in this repo has comments that describe how each step was accomplished.
@@ -52,8 +43,7 @@ The files of the data set are implicitly keyed by row number; (i.e. related file
 observation across files).
 These data on 30 subjects and six activities were separated into two parts; one to train the classifier (21 subjects) and the other to test 
 the classifier (9 subjects), see conference paper ref(Davide Anguita1, Alessandro Ghio, Luca Oneto, Xavier Parra2, and Jorge L. Reyes-Ortiz1,2,
-Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly Support Vector Machine,  in J. Bravo, R. Herv´as, and M. Rodr´ıguez
-(Eds.): IWAAL 2012, LNCS 7657, pp. 216–223, 2012.). 
+Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly Support Vector Machine,  in J. Bravo, R. Herv´as, and M. Rodr´ıguez (Eds.): IWAAL 2012, LNCS 7657, pp. 216–223, 2012.). 
 
 The deatiled description of these data are not complete and are also not detailed in the above reference article, so I will provide by best guess 
 about the interpretation of these data.
