@@ -1,1 +1,102 @@
-Codebook for Activity project
+Codebook for Samsung Activity project
+
+==================
+
+These data come from two triaxial sensors, an accelerometer and a gyroscope, in a Samsung smart phone worn by 30 subjects doing
+six specific activities; walking, wlaking upstairs, walking downstairs, standing, sitting, and laying.
+
+The original project goal was to develop an activity classifier to decide which of the six activities was being performed.
+
+An article describing the work can be found here:
+Davide Anguita1, Alessandro Ghio, Luca Oneto, Xavier Parra2, and Jorge L. Reyes-Ortiz1,2,
+Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly Support Vector Machine,  in J. Bravo, R. Herv´as, and M. Rodr´ıguez
+(Eds.): IWAAL 2012, LNCS 7657, pp. 216–223, 2012.
+
+The raw data consists of time series of three measurement variables in three dimensions, each in a separate file; 
+These are: 
+total acceleration  (x, y, z) 
+body, acceleration (totalaccel minus gravity) (x, y, z)
+gyroscopic angular momentum (x, y, z)
+
+Nine files in all, each with multiple observations of a single variable yet each row has 128 columns of presumably consecutive samples.
+These data files are implicitly keyed on row number.
+These data were sampled at 50 Hz and were subsequently processed to frequency domain data.
+128 data points corresponds to the data windowing used in one of the frequency domain techniques (2.5 s of real time).
+
+There are two ID files with one column each, subject number (1-30) and activity number (1-6), also keyed on row number.
+Each subject performs each activity for a total of 180 unique combinations of subject vs. activity.
+
+Finally there is a column ID file of 561 column names that correspond to the 561 features derived from the original nine variables.
+Some of these features are means and standard deviations and these are the features we will extract from the data set.
+Two explanatory files come with the data set
+ 1. README.txt
+ 2. features_info.txt
+Neither of these files contain the explicit details of the structure of the raw data nor all the details of how the 561 features were derived.
+
+There are 53 columns with mean in the name and 33 columns of standard deviations.
+These are data that are extracted from the feature table and from which means are calculated for each of he 180 subject/activity pairs.
+In the feature table each subject/activity pair has multiple rows (~50) of data and each row probably corresponds to 2.5 sec of data for an 
+approximate total of 2.5 min of data for each subject in each activity.
+The resulting table is 180 observations of 86 variables (means of means and means of std) plus two ID columns of subject and activity.
+
+In the list of means and std below, the prefix "t" signifies time domain and "f" signifies frequency domain features. 
+These are all derived from the original nine time series variables and these are the column names with the prefix Avg_ in the 
+final tidy_activty output table in R and tidy_activity.csv written to the working R directory.
+
+MEANS                                               STANDARD DEVIATIONS
+1 tBodyAcc-mean()-X                                 4 tBodyAcc-std()-X
+2 tBodyAcc-mean()-Y                                 5 tBodyAcc-std()-Y
+3 tBodyAcc-mean()-Z                                 6 tBodyAcc-std()-Z
+41 tGravityAcc-mean()-X                             44 tGravityAcc-std()-X
+42 tGravityAcc-mean()-Y                             45 tGravityAcc-std()-Y
+43 tGravityAcc-mean()-Z                             46 tGravityAcc-std()-Z
+81 tBodyAccJerk-mean()-X                            84 tBodyAccJerk-std()-X
+82 tBodyAccJerk-mean()-Y                            85 tBodyAccJerk-std()-Y
+83 tBodyAccJerk-mean()-Z                            86 tBodyAccJerk-std()-Z
+121 tBodyGyro-mean()-X                              124 tBodyGyro-std()-X
+122 tBodyGyro-mean()-Y                              125 tBodyGyro-std()-Y
+123 tBodyGyro-mean()-Z                              126 tBodyGyro-std()-Z
+161 tBodyGyroJerk-mean()                            164 tBodyGyroJerk-std()-X
+162 tBodyGyroJerk-mean()                            165 tBodyGyroJerk-std()-Y
+163 tBodyGyroJerk-mean()                            166 tBodyGyroJerk-std()-Z
+201 tBodyAccMag-mean()                              202 tBodyAccMag-std()
+214 tGravityAccMag-mean()                           215 tGravityAccMag-std()
+227 tBodyAccJerkMag-mean()                          228 tBodyAccJerkMag-std()
+240 tBodyGyroMag-mean()                             241 tBodyGyroMag-std()
+253 tBodyGyroJerkMag-mean()                         254 tBodyGyroJerkMag-std()
+266 fBodyAcc-mean()-X                               269 fBodyAcc-std()-X
+267 fBodyAcc-mean()-Y                               270 fBodyAcc-std()-Y
+268 fBodyAcc-mean()-Z                               271 fBodyAcc-std()-Z
+294 fBodyAcc-meanFreq()-X                           348 fBodyAccJerk-std()-X
+295 fBodyAcc-meanFreq()-Y                           349 fBodyAccJerk-std()-Y
+296 fBodyAcc-meanFreq()-Z                           350 fBodyAccJerk-std()-Z
+345 fBodyAccJerk-mean()-X                           427 fBodyGyro-std()-X
+346 fBodyAccJerk-mean()-Y                           428 fBodyGyro-std()-Y
+347 fBodyAccJerk-mean()-Z                           429 fBodyGyro-std()-Z
+373 fBodyAccJerk-meanFreq()-X                       504 fBodyAccMag-std()
+374 fBodyAccJerk-meanFreq()-Y                       517 fBodyBodyAccJerkMag-std()
+375 fBodyAccJerk-meanFreq()-Z                       530 fBodyBodyGyroMag-std()
+424 fBodyGyro-mean()-X                              543 fBodyBodyGyroJerkMag-std()
+425 fBodyGyro-mean()-Y
+426 fBodyGyro-mean()-Z
+452 fBodyGyro-meanFreq()
+453 fBodyGyro-meanFreq()
+454 fBodyGyro-meanFreq()
+503 fBodyAccMag-mean()
+513 fBodyAccMag-meanFreq()
+516 fBodyBodyAccJerkMag-mean()
+526 fBodyBodyAccJerkMag-meanFreq()
+529 fBodyBodyGyroMag-mean()
+539 fBodyBodyGyroMag-meanFreq()
+542 fBodyBodyGyroJerkMag-mean()
+552 fBodyBodyGyroJerkMag-meanFreq()
+555 angle(tBodyAccMean,gravity)
+556 angle(tBodyAccJerkMean),gravityMean)
+557 angle(tBodyGyroMean,gravityMean)
+558 angle(tBodyGyroJerkMean,gravityMean)
+559 angle(X,gravityMean)
+560 angle(Y,gravityMean)
+561 angle(Z,gravityMean)
+
+
+
