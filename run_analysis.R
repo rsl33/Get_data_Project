@@ -41,6 +41,9 @@ ft<-read.table("features.txt")
 #Read the activity data
 trx<-read.table("X_train.txt", colClasses=numeric, col.names=ft$V2)
 tex<-read.table("X_test.txt", colClasses=numeric, col.names=ft$V2)
+
+#Combine the activity data by rows; train on top of test
+
 trex<-rbind2(trx,tex)
 
 
@@ -50,14 +53,18 @@ sti<-grep("std", colnames(trex))
 #Subset the data from 561 columns to 86 (53 & 33)
 trexsub<-trex[,c(mni,sti)]
 
-#Form the ID colunms of subject and activity
+#Read the ID colunms of subject and activity
 train<-fread("subject_train.txt")
 test<-fread("subject_test.txt"
 ytrain<-fread(y_train.txt")
 ytest<-fread("y_test.txt")
 
-ttrain<-rbind(train,test)
+#Combine the subject and activity ID's train on top of test
+
+ttrain<-rbind2(train,test)
 ytt<-rbind2(ytrain,ytest)
+
+#Combine the ID columns subject before activity
 
 ttsa<-cbind2(ttrain,ytt)
 
@@ -65,12 +72,12 @@ ttsa<-cbind2(ttrain,ytt)
 
 ltrex<-cbind2(ttsa,trexsub)
 
-#Check for NA values
+#Check for NA values; if == 0 -> no NA values
 
 Sum(is.na(ltrex))
 
 #The function "doProject" is defined below.
-#From the merged data.frame ltrex [10299, 88] it selects 180 groups of subject (30) x activity (6), 
+#From the merged data.frame ltrex [10299, 88] it selects 180 groups of subject (30) x activity (6) pairs, 
 #calculates #the column means and appends to the tidy data data.frame row by row (in two nested 
 #"for"" loops;the outer one for 30 subj, the inner one for six activities) for output.
 # It takes two arguments subjects & activities (defualts are 30 & 6)
