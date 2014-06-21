@@ -127,7 +127,7 @@ for(i in 1:subj){
              }
             }
 
-#Write the data frame to the global environment
+#Copy the data frame to the global environment
 tidy_activity<<-accMltrex2
 
 #Recode the activities to text labels
