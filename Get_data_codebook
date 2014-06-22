@@ -14,7 +14,7 @@ Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly S
 (Eds.): IWAAL 2012, LNCS 7657, pp. 216–223, 2012.
 
 The readme & feature_info files that come with the data set are specific but they leave some detail to the reader's intuition.
-They do provide an email address for questions. I did not try it.
+They do provide an email address for questions. I did not try it; I don't think it was necessary for this assignment.
 
 
 The raw data consists of time series of two measurement variables plus one calculated variable in three dimensions, 
