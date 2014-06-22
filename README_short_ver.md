@@ -1,5 +1,3 @@
-## README - Short version
-
 ## SHORT README
 
 This README assumes the reader has done the course project and is very familiar with the data set.
