@@ -37,7 +37,9 @@ subject activity pairs to produce a 180 by 88 output table written to the global
 It adds a column N_obs to indicate the number of observations on which the means are based (should be multiplied by 128 to get the original number of samples)
 It also correctly labels the cols, and recodes the activity numbers for test-based labels.
 Finally it writes the data to a csv file.
+
 Details are found in the comments of the script.
+
 In R-studio one "sources" the script and runs it step by step.
 
 
