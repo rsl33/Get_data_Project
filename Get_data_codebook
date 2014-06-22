@@ -12,36 +12,54 @@ Davide Anguita1, Alessandro Ghio, Luca Oneto, Xavier Parra2, and Jorge L. Reyes-
 Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly Support Vector Machine,  in J. Bravo, R. Herv´as, and M. Rodr´ıguez
 (Eds.): IWAAL 2012, LNCS 7657, pp. 216–223, 2012.
 
-The raw data consists of time series of three measurement variables in three dimensions, each in a separate file; 
+The readme & feature_info files that come with the data set are specific but they leave some detail to the reader's intuition.
+They do provide an email address for questions. I did not try it.
+
+
+The raw data consists of time series of two measurement variables plus one calculated variable in three dimensions, 
+each in a separate file; 
 These are: 
 total acceleration  (x, y, z) 
-body, acceleration (totalaccel minus gravity) (x, y, z)
-gyroscopic angular momentum (x, y, z)
+body, acceleration (calculated as totalaccel minus gravity) (x, y, z)
+gyroscopic angular velocity (x, y, z)
+The units of accelration are G and for angular velocity rad/s .
 
 Nine files in all, each with multiple observations of a single variable yet each row has 128 columns of presumably consecutive samples.
 These data files are implicitly keyed on row number.
 These data were sampled at 50 Hz and were subsequently processed to frequency domain data.
-128 data points corresponds to the data windowing used in one of the frequency domain techniques (2.5 s of real time).
+128 data points corresponds to the data windowing used in one of the frequency domain techniques (2.56 s of real time).
+This file structure although not stricty tidy was probably useful for some of the processing techniques used to extract and 
+create and extract features from these data.
+This 2.56 s epoch structure is carried over to the table of 561 features.
+
+The 10299 by 561 extracted feature table values are normalized to values in the range +/-1 and have no missing or non 
+number values.
+Probably the original data were slightly truncted (or extended) to produce an intger number of 128 sample rows in every case.
+
 
 There are two ID files with one column each, subject number (1-30) and activity number (1-6), also keyed on row number.
 Each subject performs each activity for a total of 180 unique combinations of subject vs. activity.
 
 Finally there is a column ID file of 561 column names that correspond to the 561 features derived from the original nine variables.
 Some of these features are means and standard deviations and these are the features we will extract from the data set.
+Twenty of the features are not ordinary means but have the word mean in their name. I incuded them here just because 
+the instriuctions did not specifically say don't and it doesn't change much the access to the tidy data.
 Two explanatory files come with the data set
  1. README.txt
  2. features_info.txt
 Neither of these files contain the explicit details of the structure of the raw data nor all the details of how the 561 features were derived.
 
-There are 53 columns with mean in the name and 33 columns of standard deviations.
+There are (33 + 20) columns with mean in the name and 33 columns of standard deviations.
 These are data that are extracted from the feature table and from which means are calculated for each of he 180 subject/activity pairs.
-In the feature table each subject/activity pair has multiple rows (~50) of data and each row probably corresponds to 2.5 sec of data for an 
+In the feature table each subject/activity pair has multiple rows (~50) of data and each row probably corresponds to 2.56 sec of data for an 
 approximate total of 2.5 min of data for each subject in each activity.
 The resulting table is 180 observations of 86 variables (means of means and means of std) plus two ID columns of subject and activity.
 
 In the list of means and std below, the prefix "t" signifies time domain and "f" signifies frequency domain features. 
 These are all derived from the original nine time series variables and these are the column names with the prefix Avg_ in the 
 final tidy_activty output table in R and tidy_activity.csv written to the working R directory.
+I added a column named N_obs to indicate the number of observations on which the means were based; different (as one might 
+expect) for each subj/activity pair.
 
 MEANS                                               STANDARD DEVIATIONS
 1 tBodyAcc-mean()-X                                 4 tBodyAcc-std()-X
