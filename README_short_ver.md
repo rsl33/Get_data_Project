@@ -5,6 +5,18 @@ This README assumes the reader has done the course project and is very familiar 
 The project starts with a given (messy, semi messy) data set and we are required to extract a subset of the data and
 do a simple calculation of means creating a tidy data set in the sense of the course and in the sense of Hadly Wickham.
 
+In a tidy data set
+
+1. Each variable forms a column
+2. Each observation forms a row
+3. Each table is composed of one type of observational unit
+
+The output table created here has 33 sets of means of means and means of standard deviations and 20 more variables 
+whose names contain the word Mean. This results in a tidy 180 by 88 table.
+All the means come first then the std's. I could have doen it otherwise, using col numbers instead of names,
+but this ordering of columns does not reduce the functionality of the tidy table.
+
+
 To describe how the script run_analysis.R works to accomplish the assignment I will first describe the staring point.
 
 Six measured variables from two 3D sensors and 3 more calculated variables(subtracting acceleration due to gravity) 
