@@ -2,8 +2,8 @@
 
 ==================
 
-These data come from two triaxial sensors, an accelerometer and a gyroscope, in a Samsung smart phone worn by 30 subjects doing
-six specific activities; walking, wlaking upstairs, walking downstairs, standing, sitting, and laying.
+These data come from two triaxial sensors, an accelerometer and a gyroscope, in a Samsung smart phone worn at the waist
+by 30 subjects doingsix specific activities; walking, walking upstairs, walking downstairs, standing, sitting, and laying.
 
 The original project goal was to develop an activity classifier to decide which of the six activities was being performed.
 
