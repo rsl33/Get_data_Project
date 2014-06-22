@@ -12,7 +12,7 @@ In a tidy data set
 3. Each table is composed of one type of observational unit
 
 The output table created here has 33 sets of means of means and means of standard deviations and 20 more variables 
-whose names contain the word Mean. This results in a tidy 180 by 88 table.
+whose names contain the word Mean. This results in a tidy 180 by 89 table (three more cols. added).
 All the means come first then the std's. I could have doen it otherwise, using col numbers instead of names,
 but this ordering of columns does not reduce the functionality of the tidy table.
 
