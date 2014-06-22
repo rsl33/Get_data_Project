@@ -7,7 +7,8 @@ by 30 subjects doingsix specific activities; walking, walking upstairs, walking 
 
 The original project goal was to develop an activity classifier to decide which of the six activities was being performed.
 
-An article describing the work can be found here:
+An article describing the work can be found here: (conference proceedings, Springer; not open source; fine data details 
+not included).
 Davide Anguita1, Alessandro Ghio, Luca Oneto, Xavier Parra2, and Jorge L. Reyes-Ortiz1,2,
 Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly Support Vector Machine,  in J. Bravo, R. Herv´as, and M. Rodr´ıguez
 (Eds.): IWAAL 2012, LNCS 7657, pp. 216–223, 2012.
